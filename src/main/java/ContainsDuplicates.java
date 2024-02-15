@@ -1,4 +1,5 @@
-
+import java.util.TreeSet;
+import java.util.Set;
 
 public class ContainsDuplicates {
     /**
@@ -8,6 +9,12 @@ public class ContainsDuplicates {
      * @return true if nums contains any duplicate values, false if it does not.
      */
     public boolean containsDuplicate(int[] nums){
+        Set<Integer> copy = new TreeSet<Integer>();
+        for (int n : nums) {
+            if (!copy.add(n)) {
+                return true;
+            }
+        }
         return false;
     }
 }
